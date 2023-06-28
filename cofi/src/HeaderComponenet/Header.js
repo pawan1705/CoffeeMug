@@ -8,13 +8,46 @@ function Header() {
             if(localStorage.getItem("role")=="admin")
             {
                 setHeaderContent(<div>
-                    <h1>this is admin section</h1>
+{/* admin */}
+         <div class="container-fluid bg-info">
+                 {/* start */}
+                 <div class="container-fluid px-5 d-none d-lg-block">
+          <div class="row gx-5">
+              <div class="col-lg-6 text-center py-3">
+                  <div class="d-inline-flex align-items-center">
+                      <i class="bi bi-geo-alt fs-1 text-primary me-3"></i>
+                      <div class="text-start">
+                          <h6 class="text-uppercase fw-bold">This is Admin panel</h6>
+                          <span>email</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+         </div>
+{/* admin */}
                 </div>)
             }else if(localStorage.getItem("role")=="user")
             {
                 setHeaderContent(
                     <div>
-                        <h1>this is user section</h1>
+                        {/* user */}
+                        <div class="container-fluid bg-info">
+                 <div class="container-fluid px-5 d-none d-lg-block">
+          <div class="row gx-5">
+              <div class="col-lg-6 text-center py-3">
+                  <div class="d-inline-flex align-items-center">
+                      <i class="bi bi-geo-alt fs-1 text-primary me-3"></i>
+                      <div class="text-start">
+                          <h6 class="text-uppercase fw-bold">This is User panel</h6>
+                          <span>email</span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+         </div>
+                        {/* user */}
                     </div>
                 )
             }
@@ -63,7 +96,7 @@ function Header() {
         },2000)
     },[])
   return (
-    <div className="Header">
+    <div>
     {/* Header open */}
     {HeaderContent}
     {/* Header close */}

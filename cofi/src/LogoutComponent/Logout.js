@@ -1,34 +1,27 @@
 import './Logout.css';
-
+import {useNavigate} from 'react-router-dom'
 
 function Logout() {
+  const Navigate=useNavigate();
+localStorage.removeItem('token');
+localStorage.removeItem('_id');
+localStorage.removeItem("name");
+localStorage.removeItem("username");
+localStorage.removeItem("email");
+localStorage.removeItem("password");
+localStorage.removeItem("phone");
+localStorage.removeItem("address");
+localStorage.removeItem("city");
+localStorage.removeItem("gender");
+localStorage.removeItem("role");
+localStorage.removeItem("createdAt");
+localStorage.removeItem("updatedAt");
+localStorage.removeItem("deletedAt");
 
-
-  return (
-    <div>
-    {/* content Start */}
-    <div class="container-fluid py-6 px-5">
-        <div class="row g-5">
-<div class="col-lg-12">
-<h2>Login Here!!!</h2>
-<font style={{"color":"green"}}></font>
-<form >
-    <div class="form-group">
-      <label for="email">Email address:</label>
-      <input type="email" class="form-control"  />
-    </div>
-    <div class="form-group">
-      <label for="pwd">Password:</label>
-      <input type="password" class="form-control" />
-    </div>
-    <button type="submit" class="btn btn-success">Logout</button>
-  </form>
-
-</div>
-        </div>
-    </div>
-    {/* content End */}
-    </div>
+  return (<div>
+<Navigate to ="/login" />
+  </div>
+    
   );
 }
 

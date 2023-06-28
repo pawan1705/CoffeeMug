@@ -4,17 +4,11 @@ function UserHome() {
 
 
   return (
-    <div>
-    {/* content Start */}
-    <div class="container-fluid py-6 px-5">
-        <div class="row g-5">
-<div class="col-lg-12">
-<h2 style={{"textAlign":"center"}}>UserHome</h2>
+    <div class="container-fluid bg-warning">
+   <div class="col-lg-12 text-center py-3">
+      <h6 class="text-uppercase fw-bold">user home</h6>
+   </div>
 </div>
-        </div>
-    </div>
-    {/* content End */}
-    </div>
   );
 }
 

@@ -13,7 +13,9 @@ import UserHome from './UserHomeComponent/UserHome';
 import { Routes,Route } from 'react-router-dom';
 import AdminHome from './AdminHomeComponent/AdminHome';
 import Nav from './NavComponenet/Nav'
+import ManageUser from './ManageUserComponenet/ManageUser'
 import Logout from './LogoutComponent/Logout'
+// import ManageUser from './ManageUserComponenet/ManageUser';
 function App() {
   return (
     <div className="">
@@ -26,13 +28,12 @@ function App() {
         <Route path="/services" element={<Services/>}></Route>
         <Route path="/user" element={<UserHome/>}></Route>
         <Route path="/admin" element={<AdminHome/>}></Route>
+        <Route path="/manageuser" element={<ManageUser/>}></Route>
         <Route path="/logout" element={<Logout/>}></Route>
       </Routes>
       <Banner/>
-      
       <About/>
       <Galery/>
-      {/* <Services/> */}
       <Testimonial/>
       <Contact/>
       <Footer/>

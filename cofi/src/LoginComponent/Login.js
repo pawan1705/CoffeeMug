@@ -31,7 +31,7 @@ function Login() {
     localStorage.setItem("updatedAt",responseData.updatedAt);
     localStorage.setItem("deletedAt",responseData.deletedAt);
 
-    response.data.role == "admin"? Navigate("/admin"):Navigate("/user");
+    responseData.role == "admin"? Navigate("/admin"):Navigate("/user");
   }).catch((error)=>{
     setOutput("invalid user or varify your account");
     setEmail('');
