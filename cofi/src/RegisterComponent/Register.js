@@ -2,9 +2,10 @@ import './Register.css';
 import { useState } from 'react';
 import axios from 'axios';
 import { _apiURLUser } from '../apiURL';
+import {useNavigate} from 'react-router-dom'
 
 function Register() {
-
+  const Navigate=useNavigate();
   const [ output , setOutput ] = useState();
   const [ name , setName ] = useState(); 
   const [ username , setUsername ] = useState();     

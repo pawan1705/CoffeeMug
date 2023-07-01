@@ -3,6 +3,7 @@ import url from 'url';
 import UserSchemaModel from '../models/user.models.js';
 import rs from 'randomstring';
 import jwt from 'jsonwebtoken';
+import userSchemaModel from '../models/user.models.js';
 
 export var save=async(req,res,next)=>{
     var userDetail=req.body;
@@ -23,11 +24,12 @@ export var fetch=async(req,res,next)=>{
     var userList=await UserSchemaModel.find(urlObj);
     var l=userList.length;
     if(l!=0)
-    return res.status(201).json({"response":userList});
+    return res.status(201).json(userList);
     else
     return res.status(500).json({"error":"server error"});
-
 }
+
+
 
 // delete
 export var deleteUser=async(req,res,next)=>{
@@ -48,20 +50,16 @@ export var deleteUser=async(req,res,next)=>{
 
 // update
 export var updateUser=async(req,res,next)=>{
-    var userDetails=await UserSchemaModel.findOne({_id:req.body._id});
-    console.log(userDetails);
+    let userDetails=await userSchemaModel.findOne(req.body.condition)
     if(userDetails){
-        let id=req.body._id;
-        delete req.body._id;
-
-        let user=await UserSchemaModel.updateOne({_id:id},{$set:req.body});
+        let user = await UserSchemaModel.updateOne(req.body.condition,req.body.set);
         if(user)
         return res.status(201).json({"message":"success"});
         else
-        return res.status(404).json({"error":"server error"});
+        return res.status(500).json({error:"server error"})
     }
     else
-    return res.status(404).json({"error":"requested resource not available"})
+    return res.status(404).json({error:"request resource not found"})
 };
 
 // login
