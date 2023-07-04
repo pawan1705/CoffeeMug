@@ -1,5 +1,5 @@
 import './AdminHome.css';
-
+import Auth from '../AuthComponent/Auth'
 function AdminHome() {
 
 

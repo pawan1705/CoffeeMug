@@ -6,7 +6,7 @@ import {_apiURLUser} from '../apiURL.js'
 function ManageUser() {
   const[userDetail,setUserDetail]=useState([]);
   useEffect(()=>{
-    axios.get(_apiURLUser+"fetch").then((result)=>{
+    axios.get(_apiURLUser+"fetch?role=user").then((result)=>{
       setUserDetail(result.data);
     })
   },[])

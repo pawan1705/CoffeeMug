@@ -18,7 +18,7 @@ function Header() {
                       <i class="bi bi-geo-alt fs-1 text-primary me-3"></i>
                       <div class="text-start">
                           <h6 class="text-uppercase fw-bold">This is Admin panel</h6>
-                          <span>email</span>
+                          <span>{localStorage.getItem("email")}</span>
                       </div>
                   </div>
               </div>
@@ -40,7 +40,7 @@ function Header() {
                       <i class="bi bi-geo-alt fs-1 text-primary me-3"></i>
                       <div class="text-start">
                           <h6 class="text-uppercase fw-bold">This is User panel</h6>
-                          <span>email</span>
+                          <span>{localStorage.getItem("email")}</span>
                       </div>
                   </div>
               </div>
